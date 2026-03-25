@@ -1,7 +1,6 @@
 package ie.atu.week10.week10_25_03_26.model;
 
 
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,7 +17,10 @@ import java.time.LocalDate;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Notification {
+@Entity
+public class NotificationRecord {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long notificationID;
 
     private long reservationId;
@@ -32,3 +34,5 @@ public class Notification {
 
     private boolean notificationStatus;
 }
+
+
